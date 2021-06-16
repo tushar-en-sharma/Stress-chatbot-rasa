@@ -1,0 +1,418 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: stress_1step
+  examples: |
+    - yes
+    - Yes
+    - ya
+    - ha
+    - haan
+    - yep
+    - yeah
+- intent: stress
+  examples: |
+    - ha
+    - ya
+    - yeah
+    - yep
+- intent: name_entry
+  examples: |
+    - my name is [Tushar](name)
+    - myself [Tushar](name)
+    - my name is [Lavanya](name)
+    - myself [Lavanya](name)
+    - my name is [Jitendra](name)
+    - myself [Jitendra](name)
+    - my name is [sonia](name)
+    - myself [sonia](name)
+    - good morning
+    - my name is [Tania](name)
+    - myself [Tania](name)
+    - my name is [Aarti](name)
+    - myself [Aarti](name)
+    - my name is [John](name)
+    - myself [John](name)
+    - my name is [Sam](name)
+    - myself [Sam](name)
+    - my name is [Anjali](name)
+    - myself [Anjali](name)
+    - my name is [Somya](name)
+    - myself [Somya](name)
+    - [Aarti](name)
+    - [Jitendra](name)
+    - [tushar](name)
+    - [Tushar](name)
+    - [jitendra](name)
+    - [Anjali](name)
+    - aman
+    - [TUshar](name)
+- intent: not_stress
+  examples: |
+    - No
+    - nhi
+    - no
+    - nope
+    - na
+- intent: question1_yes
+  examples: |
+    - Yes
+    - 1
+    - one
+- intent: question1_no
+  examples: |
+    - 2
+    - two
+    - no
+- intent: question2_yes
+  examples: |
+    - 1
+    - one
+    - Yes
+- intent: question2_no
+  examples: |
+    - 2
+    - two
+    - no
+- intent: question3_yes_yes
+  examples: |
+    - 1
+    - one
+    - yes
+- intent: question3_yes_no
+  examples: |
+    - 2
+    - two
+    - no
+- intent: question3_no_yes
+  examples: |
+    - 1
+    - one
+    - yes
+- intent: question3_no_no
+  examples: |
+    - 2
+    - two
+    - no
+- intent: question4_yes_yes_yes
+  examples: |
+    - 1
+    - one
+    - yes
+- intent: question4_yes_yes_no
+  examples: |
+    - 2
+    - two
+    - no
+- intent: question4_yes_no_yes
+  examples: |
+    - 1
+    - one
+    - yes
+- intent: question4_yes_no_no
+  examples: |
+    - 2
+    - two
+    - no
+- intent: question4_no_yes_yes
+  examples: |
+    - 1
+    - one
+    - yes
+- intent: question4_no_yes_no
+  examples: |
+    - 2
+    - two
+    - no
+- intent: question4_no_no_yes
+  examples: |
+    - 1
+    - one
+    - yes
+- intent: question4_no_no_no
+  examples: |
+    - 2
+    - two
+    - no
+- intent: question5_yes
+  examples: |
+    - 1
+    - one
+    - yes
+- intent: question5_no
+  examples: |
+    - 2
+    - two
+    - no
+- intent: question6_yes
+  examples: |
+    - 1
+    - one
+    - yes
+- intent: question6_no
+  examples: |
+    - 2
+    - two
+    - no
+- intent: question7_yes_yes
+  examples: |
+    - 1
+    - one
+    - yes
+- intent: question7_yes_no
+  examples: |
+    - 2
+    - two
+    - no
+- intent: question7_no_yes
+  examples: |
+    - 1
+    - one
+    - yes
+- intent: question7_no_no
+  examples: |
+    - 2
+    - two
+    - no
+- intent: question8_yes_yes_yes
+  examples: |
+    - 1
+    - one
+    - yes
+- intent: question8_yes_yes_no
+  examples: |
+    - 2
+    - two
+    - no
+- intent: question8_yes_no_yes
+  examples: |
+    - 1
+    - one
+    - yes
+- intent: question8_yes_no_no
+  examples: |
+    - 2
+    - two
+    - no
+- intent: question8_no_yes_yes
+  examples: |
+    - 1
+    - one
+    - yes
+- intent: question8_no_yes_no
+  examples: |
+    - 2
+    - two
+    - no
+- intent: question8_no_no_yes
+  examples: |
+    - 1
+    - one
+    - yes
+- intent: question8_no_no_no
+  examples: |
+    - 2
+    - two
+    - no
+- intent: question9_yes
+  examples: |
+    - 1
+    - one
+    - yes
+- intent: question9_no
+  examples: |
+    - 2
+    - two
+    - no
+- intent: question10_yes
+  examples: |
+    - 1
+    - one
+    - yes
+- intent: question10_no
+  examples: |
+    - 2
+    - two
+    - no
+- intent: question11_yes_yes
+  examples: |
+    - 1
+    - one
+    - yes
+- intent: question11_yes_no
+  examples: |
+    - 2
+    - two
+    - no
+- intent: question11_no_yes
+  examples: |
+    - 1
+    - one
+    - yes
+- intent: question11_no_no
+  examples: |
+    - 2
+    - two
+    - no
+- intent: question12_yes
+  examples: |
+    - 1
+    - one
+    - yes
+- intent: question12_no
+  examples: |
+    - 2
+    - two
+    - no
+- intent: question13_yes
+  examples: |
+    - 1
+    - one
+    - yes
+- intent: question13_no
+  examples: |
+    - 2
+    - two
+    - no
+- intent: question14_yes_yes
+  examples: |
+    - 1
+    - one
+    - yes
+- intent: question14_yes_no
+  examples: |
+    - 2
+    - two
+    - no
+- intent: question14_no_yes
+  examples: |
+    - 1
+    - one
+    - yes
+- intent: question14_no_no
+  examples: |
+    - 2
+    - two
+    - no
+- intent: question15_yes_yes_yes
+  examples: |
+    - 1
+    - one
+    - yes
+- intent: question15_yes_yes_no
+  examples: |
+    - 2
+    - two
+    - no
+- intent: question15_yes_no_yes
+  examples: |
+    - 1
+    - one
+    - yes
+- intent: question15_yes_no_no
+  examples: |
+    - 2
+    - two
+    - no
+- intent: question15_no_yes_yes
+  examples: |
+    - 1
+    - one
+    - yes
+- intent: question15_no_yes_no
+  examples: |
+    - 2
+    - two
+    - no
+- intent: question15_no_no_yes
+  examples: |
+    - 1
+    - one
+    - yes
+- intent: question15_no_no_no
+  examples: |
+    - 2
+    - two
+    - no
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?

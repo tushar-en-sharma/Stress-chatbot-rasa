@@ -1,0 +1,227 @@
+stories:
+
+- story: Start BOT 
+  steps:
+  - intent: greet
+  - action: utter_name
+  - intent: name_entry  
+  - action: utter_greet
+
+
+- story: stress start
+  steps:
+  - intent: stress
+  - action: utter_stressyes 
+  - intent: not_stress  
+  - action: utter_stressno
+  - intent: stress_1step
+  - action: utter_question1
+  
+- story: stres quetion1to2 
+  steps:
+  - intent: question2_yes
+  - action: utter_question2_yes
+  - intent: question2_no
+  - action: utter_question2_no
+
+- story: stres quetion2to3
+  steps: 
+  - intent: question3_yes_yes
+  - action: utter_question3_yes_yes
+  - intent: question3_yes_no
+  - action: utter_question3_yes_no
+  - intent: question3_no_no
+  - action: utter_question3_no_no
+  - intent: question3_no_yes
+  - action: utter_question3_no_yes
+
+- story: stres quetion3to4
+  steps:
+  - intent: question4_yes_yes_yes
+  - action: utter_question4_yes_yes_yes
+  - intent: question4_yes_yes_no
+  - action: utter_question4_yes_yes_no
+  - intent: question4_yes_no_yes
+  - action: utter_question4_yes_no_yes
+  - intent: question4_yes_no_no
+  - action: utter_question4_yes_no_no 
+  - intent: question4_no_yes_yes
+  - action: utter_question4_no_yes_yes
+  - intent: question4_no_yes_no
+  - action: utter_question4_no_yes_no
+  - intent: question4_no_no_yes
+  - action: utter_question4_no_no_yes
+  - intent: question4_no_no_no
+  - action: utter_question4_no_no_no
+
+- story: stres depression_end
+  steps:
+  - intent: depression_medium
+  - action: utter_depression_medium
+  - intent: depression_low
+  - action: utter_depression_low
+  - intent: depression_high
+  - action: utter_depression_high
+  - intent: depression_0
+  - action: utter_depression_0    
+
+- story: stres question5
+  steps:
+  - intent: stress_5q
+  - action: utter_question5
+ 
+- story: stres quetion5to6
+  steps:
+  - intent: question6_yes
+  - action: utter_question6_yes
+  - intent: question6_no
+  - action: utter_question6_no 
+  
+- story: stres quetion6to7
+  steps:
+  - intent: question7_yes_yes
+  - action: utter_question7_yes_yes
+  - intent: question7_yes_no
+  - action: utter_question7_yes_no
+  - intent: question7_no_no
+  - action: utter_question7_no_no
+  - intent: question7_no_yes
+  - action: utter_question7_no_yes  
+  
+- story: stres quetion7to8
+  steps:
+  - intent: question8_yes_yes_yes
+  - action: utter_question8_yes_yes_yes
+  - intent: question8_yes_yes_no
+  - action: utter_question8_yes_yes_no
+  - intent: question8_yes_no_yes
+  - action: utter_question8_yes_no_yes
+  - intent: question8_yes_no_no
+  - action: utter_question8_yes_no_no 
+  - intent: question8_no_yes_yes
+  - action: utter_question8_no_yes_yes
+  - intent: question8_no_yes_no
+  - action: utter_question8_no_yes_no
+  - intent: question8_no_no_yes
+  - action: utter_question8_no_no_yes
+  - intent: question8_no_no_no
+  - action: utter_question8_no_no_no  
+  
+- story: stres stress_end
+  steps:
+  - intent: stress_medium
+  - action: utter_stress_medium
+  - intent: stress_low
+  - action: utter_stress_low
+  - intent: stress_high
+  - action: utter_stress_high
+  - intent: stress_0
+  - action: utter_stress_0     
+
+- story: stres question9
+  steps:
+  - intent: stress_9q
+  - action: utter_question9
+ 
+- story: stres quetion9to10
+  steps:
+  - intent: question10_yes
+  - action: utter_question10_yes
+  - intent: question10_no
+  - action: utter_question10_no  
+  
+- story: stres quetion10to11
+  steps:
+  - intent: question11_yes_yes
+  - action: utter_question11_yes_yes
+  - intent: question11_yes_no
+  - action: utter_question11_yes_no
+  - intent: question11_no_no
+  - action: utter_question11_no_no
+  - intent: question11_no_yes
+  - action: utter_question11_no_yes    
+
+- story: stres phobia_end
+  steps:
+  - intent: phobia_medium
+  - action: utter_phobia_medium
+  - intent: phobia_low
+  - action: utter_phobia_low
+  - intent: phobia_high
+  - action: utter_phobia_high
+  - intent: phobia_0
+  - action: utter_phobia_0     
+  
+- story: anxiety question12
+  steps:
+  - intent: anxiety_12q
+  - action: utter_question12  
+  
+- story: stres quetion12to13 
+  steps:
+  - intent: question13_yes
+  - action: utter_question13_yes
+  - intent: question13_no
+  - action: utter_question13_no  
+
+- story: stres quetion13to14
+  steps: 
+  - intent: question14_yes_yes
+  - action: utter_question14_yes_yes
+  - intent: question14_yes_no
+  - action: utter_question14_yes_no
+  - intent: question14_no_no
+  - action: utter_question14_no_no
+  - intent: question14_no_yes
+  - action: utter_question14_no_yes  
+  
+- story: stres quetion14to15
+  steps:
+  - intent: question15_yes_yes_yes
+  - action: utter_question15_yes_yes_yes
+  - intent: question15_yes_yes_no
+  - action: utter_question15_yes_yes_no
+  - intent: question15_yes_no_yes
+  - action: utter_question15_yes_no_yes
+  - intent: question15_yes_no_no
+  - action: utter_question15_yes_no_no 
+  - intent: question15_no_yes_yes
+  - action: utter_question15_no_yes_yes
+  - intent: question15_no_yes_no
+  - action: utter_question15_no_yes_no
+  - intent: question15_no_no_yes
+  - action: utter_question15_no_no_yes
+  - intent: question15_no_no_no
+  - action: utter_question15_no_no_no  
+  
+- story: stres anxiety_end
+  steps:
+  - intent: anxiety_medium
+  - action: utter_anxiety_medium
+  - intent: anxiety_low
+  - action: utter_anxiety_low
+  - intent: anxiety_high
+  - action: utter_anxiety_high
+  - intent: anxiety_0
+  - action: utter_anxiety_0     
+
+- story: stres end
+  steps: 
+  - intent: stress_end
+  - action: utter_end
+
+- story: New Story
+  steps:
+  - intent: greet
+  - action: utter_name
+  - intent: name_entry
+  - action: action_hello_world
+  - action: utter_greet
+  - intent: stress
+  - action: utter_stressyes
+  - intent: stress_1step
+  - action: utter_question1
+  - intent: question2_yes
+  - action: utter_question2_yes
+  - intent: question3_yes_yes
+  - action: utter_question3_yes_yes

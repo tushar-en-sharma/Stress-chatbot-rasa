@@ -1,0 +1,738 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- stress:
+    use_entities: true
+- not_stress:
+    use_entities: true
+- stress_1step:
+    use_entities: true
+- question1_yes:
+    use_entities: true
+- question1_no:
+    use_entities: true
+- question2_yes:
+    use_entities: true
+- question2_no:
+    use_entities: true
+- question3_yes_yes:
+    use_entities: true
+- question3_yes_no:
+    use_entities: true
+- question3_no_yes:
+    use_entities: true
+- question3_no_no:
+    use_entities: true
+- question4_yes_yes_yes:
+    use_entities: true
+- question4_yes_yes_no:
+    use_entities: true
+- question4_yes_no_yes:
+    use_entities: true
+- question4_yes_no_no:
+    use_entities: true
+- question4_no_yes_yes:
+    use_entities: true
+- question4_no_yes_no:
+    use_entities: true
+- question4_no_no_yes:
+    use_entities: true
+- question4_no_no_no:
+    use_entities: true
+- stress_end:
+    use_entities: true
+- depression_low:
+    use_entities: true
+- depression_medium:
+    use_entities: true
+- depression_high:
+    use_entities: true
+- depression_0:
+    use_entities: true
+- stress_5q:
+    use_entities: true
+- name_entry:
+    use_entities: true
+- question5_no:
+    use_entities: true
+- question5_yes:
+    use_entities: true
+- question6_yes:
+    use_entities: true
+- question6_no:
+    use_entities: true
+- question7_yes_yes:
+    use_entities: true
+- question7_yes_no:
+    use_entities: true
+- question7_no_yes:
+    use_entities: true
+- question7_no_no:
+    use_entities: true
+- question8_yes_yes_yes:
+    use_entities: true
+- question8_yes_yes_no:
+    use_entities: true
+- question8_yes_no_yes:
+    use_entities: true
+- question8_yes_no_no:
+    use_entities: true
+- question8_no_yes_yes:
+    use_entities: true
+- question8_no_yes_no:
+    use_entities: true
+- question8_no_no_yes:
+    use_entities: true
+- question8_no_no_no:
+    use_entities: true
+- stress_low:
+    use_entities: true
+- stress_medium:
+    use_entities: true
+- stress_high:
+    use_entities: true
+- stress_0:
+    use_entities: true
+- stress_9q:
+    use_entities: true
+- question10_yes:
+    use_entities: true
+- question10_no:
+    use_entities: true
+- question11_yes_yes:
+    use_entities: true
+- question11_yes_no:
+    use_entities: true
+- question11_no_yes:
+    use_entities: true
+- question11_no_no:
+    use_entities: true
+- phobia_low:
+    use_entities: true
+- phobia_medium:
+    use_entities: true
+- phobia_high:
+    use_entities: true
+- phobia_0:
+    use_entities: true
+- question9_no:
+    use_entities: true
+- question9_yes:
+    use_entities: true
+- utter_greet:
+    use_entities: true
+- question12_yes:
+    use_entities: true
+- question12_no:
+    use_entities: true
+- question13_yes:
+    use_entities: true
+- question13_no:
+    use_entities: true
+- question14_yes_yes:
+    use_entities: true
+- question14_yes_no:
+    use_entities: true
+- question14_no_yes:
+    use_entities: true
+- question14_no_no:
+    use_entities: true
+- question15_yes_yes_yes:
+    use_entities: true
+- question15_yes_yes_no:
+    use_entities: true
+- question15_yes_no_yes:
+    use_entities: true
+- question15_yes_no_no:
+    use_entities: true
+- question15_no_yes_yes:
+    use_entities: true
+- question15_no_yes_no:
+    use_entities: true
+- question15_no_no_yes:
+    use_entities: true
+- question15_no_no_no:
+    use_entities: true
+- anxiety_12q:
+    use_entities: true
+- anxiety_low:
+    use_entities: true
+- anxiety_medium:
+    use_entities: true
+- anxiety_high:
+    use_entities: true
+- anxiety_0:
+    use_entities: true
+- nlu_fallback:
+    use_entities: true
+entities:
+- name
+slots:
+  name:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+responses:
+  utter_name:
+  - text: Please Enter Your name?
+  utter_greet:
+  - buttons:
+    - payload: /stress
+      title: Yes
+    - payload: /not_stress
+      title: No
+    text: 'Hey {name}! How are you? Are you in Stress:'
+  utter_stressyes:
+  - buttons:
+    - payload: /stress_1step
+      title: Yes
+    - payload: /not_stress
+      title: No
+    text: Do you want to take a test to find out about your stress?
+  utter_question1:
+  - buttons:
+    - payload: /question2_yes
+      title: 1:Yes
+    - payload: /question2_no
+      title: 2:No
+    text: 'Question 1: Do you have suicidal thoughts or attempted?'
+  utter_question2_yes:
+  - buttons:
+    - payload: /question3_yes_yes
+      title: 1:Yes
+    - payload: /question3_yes_no
+      title: 2:No
+    text: 'Question 2: Do you have feeling of worthlessness,low self-esteem or low confidence?'
+  utter_question2_no:
+  - buttons:
+    - payload: /question3_no_yes
+      title: 1:Yes
+    - payload: /question3_no_no
+      title: 2:No
+    text: 'Question 2: Do you have feeling of worthlessness,low self-esteem or low confidence?'
+  utter_question3_yes_yes:
+  - buttons:
+    - payload: /question4_yes_yes_yes
+      title: 1:Yes
+    - payload: /question4_yes_yes_no
+      title: 2:No
+    text: 'Question 3: Do you feel Angry often?'
+  utter_question3_yes_no:
+  - buttons:
+    - payload: /question4_yes_no_yes
+      title: 1:Yes
+    - payload: /question4_yes_no_no
+      title: 2:No
+    text: 'Question 3: Do you feel Angry often?'
+  utter_question3_no_yes:
+  - buttons:
+    - payload: /question4_no_yes_yes
+      title: 1:Yes
+    - payload: /question4_no_yes_no
+      title: 2:No
+    text: 'Question 3: Do you feel Angry often?'
+  utter_question3_no_no:
+  - buttons:
+    - payload: /question4_no_no_yes
+      title: 1:Yes
+    - payload: /question4_no_no_no
+      title: 2:No
+    text: 'Question 3: Do you feel Angry often?'
+  utter_question4_yes_yes_yes:
+  - buttons:
+    - payload: /depression_high
+      title: 1:Yes
+    - payload: /depression_medium
+      title: 2:No
+    text: 'Question 4: Do you eat more often(increase in appetite)?'
+  utter_question4_yes_yes_no:
+  - buttons:
+    - payload: /depression_medium
+      title: 1:Yes
+    - payload: /depression_medium
+      title: 2:No
+    text: 'Question 4: Do you eat more often(increase in appetite)?'
+  utter_question4_yes_no_yes:
+  - buttons:
+    - payload: /depression_medium
+      title: 1:Yes
+    - payload: /depression_medium
+      title: 2:No
+    text: 'Question 4: Do you eat more often(increase in appetite)?'
+  utter_question4_yes_no_no:
+  - buttons:
+    - payload: /depression_medium
+      title: 1:Yes
+    - payload: /depression_low
+      title: 2:No
+    text: 'Question 4: Do you eat more often(increase in appetite)?'
+  utter_question4_no_yes_yes:
+  - buttons:
+    - payload: /depression_medium
+      title: 1:Yes
+    - payload: /depression_medium
+      title: 2:No
+    text: 'Question 4: Do you eat more often(increase in appetite)?'
+  utter_question4_no_yes_no:
+  - buttons:
+    - payload: /depression_medium
+      title: 1:Yes
+    - payload: /depression_medium
+      title: 2:No
+    text: 'Question 4: Do you eat more often(increase in appetite)?'
+  utter_question4_no_no_yes:
+  - buttons:
+    - payload: /depression_medium
+      title: 1:Yes
+    - payload: /depression_low
+      title: 2:No
+    text: 'Question 4: Do you eat more often(increase in appetite)?'
+  utter_question4_no_no_no:
+  - buttons:
+    - payload: /depression_low
+      title: 1:Yes
+    - payload: /depression_0
+      title: 2:No
+    text: 'Question 4: Do you eat more often(increase in appetite)?'
+  utter_depression_low:
+  - buttons:
+    - payload: /stress_5q
+      title: 1:Yes
+    - payload: /stress_end
+      title: 2:No
+    text: |-
+      Your DEPRESSION Range is Low(1), You can manage by doing:-
+      -> 45 minutes walk
+      -> eating food like fruits
+      -> vegetables, beans & whole grains
+      -> Meditation also helps in this
+      -> You can also write down your feelings on a piece of paper, it does helps in reducing it.
+      Do you want to Continue give the answers ?
+  utter_depression_medium:
+  - buttons:
+    - payload: /stress_5q
+      title: 1:Yes
+    - payload: /stress_end
+      title: 2:No
+    text: |-
+      Your DEPRESSION Range is Medium(2-3), You can manage by following method:  
+      -> 45 minutes walk
+      -> eating food like fruits
+      -> vegetables, beans & whole grains
+      -> Meditation also helps in this
+      -> You can also write down your feelings on a piece of paper, it does helps in reducing it. 
+      -> CBT is also very effective in this. 
+      Do you want to Continue give the answers ?
+  utter_depression_high:
+  - buttons:
+    - payload: /stress_5q
+      title: 1:Yes
+    - payload: /stress_end
+      title: 2:No
+    text: |-
+      Your DEPRESSION Range is High(4), 
+      You need to visit doctor on urgent basis. 
+      Here i am providing you a contact number for Counsellor Annuradha. She sits in VIMHANS Hospital.
+      Contact Number :- 9945670288 
+      Do you want to Continue give the answers ?
+  utter_depression_0:
+  - buttons:
+    - payload: /stress_5q
+      title: 1:Yes
+    - payload: /stress_end
+      title: 2:No
+    text: |-
+      You does not fall in depression, continue to know more. 
+      Do you want to Continue give the answers
+  utter_question5:
+  - buttons:
+    - payload: /question6_yes
+      title: 1:Yes
+    - payload: /question6_no
+      title: 2:No
+    text: 'Question 5: Do you often have Headaches'
+  utter_question6_yes:
+  - buttons:
+    - payload: /question7_yes_yes
+      title: 1:Yes
+    - payload: /question7_yes_no
+      title: 2:No
+    text: 'Question 6: Do you have feeling of Heart Palpitations/sensation that the heart is racing, pounding, fluttering or skipping a beat?'
+  utter_question6_no:
+  - buttons:
+    - payload: /question7_no_yes
+      title: 1:Yes
+    - payload: /question7_no_no
+      title: 2:No
+    text: 'Question 6: Do you have feeling of Heart Palpitations/sensation that the heart is racing, pounding, fluttering or skipping a beat?'
+  utter_question7_yes_yes:
+  - buttons:
+    - payload: /question8_yes_yes_yes
+      title: 1:Yes
+    - payload: /question8_yes_yes_no
+      title: 2:No
+    text: 'Question 7: Any kind of Skin Rashes?'
+  utter_question7_yes_no:
+  - buttons:
+    - payload: /question8_yes_no_yes
+      title: 1:Yes
+    - payload: /question8_yes_no_no
+      title: 2:No
+    text: 'Question 7: Any kind of Skin Rashes?'
+  utter_question7_no_yes:
+  - buttons:
+    - payload: /question8_no_yes_yes
+      title: 1:Yes
+    - payload: /question8_no_yes_no
+      title: 2:No
+    text: 'Question 7: Any kind of Skin Rashes?'
+  utter_question7_no_no:
+  - buttons:
+    - payload: /question8_no_no_yes
+      title: 1:Yes
+    - payload: /question8_no_no_no
+      title: 2:No
+    text: 'Question 7: Any kind of Skin Rashes?'
+  utter_question8_yes_yes_yes:
+  - buttons:
+    - payload: /stress_high
+      title: 1:Yes
+    - payload: /stress_medium
+      title: 2:No
+    text: 'Question 8: Do you have inadequate or poor sleep?'
+  utter_question8_yes_yes_no:
+  - buttons:
+    - payload: /stress_medium
+      title: 1:Yes
+    - payload: /stress_medium
+      title: 2:No
+    text: Question 8:Do you have inadequate or poor sleep?
+  utter_question8_yes_no_yes:
+  - buttons:
+    - payload: /stress_medium
+      title: 1:Yes
+    - payload: /stress_medium
+      title: 2:No
+    text: 'Question 8: Do you have inadequate or poor sleep?'
+  utter_question8_yes_no_no:
+  - buttons:
+    - payload: /stress_medium
+      title: 1:Yes
+    - payload: /stress_low
+      title: 2:No
+    text: 'Question 8: Do you have inadequate or poor sleep?'
+  utter_question8_no_yes_yes:
+  - buttons:
+    - payload: /stress_medium
+      title: 1:Yes
+    - payload: /stress_medium
+      title: 2:No
+    text: 'Question 8: Do you have inadequate or poor sleep?'
+  utter_question8_no_yes_no:
+  - buttons:
+    - payload: /stress_medium
+      title: 1:Yes
+    - payload: /stress_low
+      title: 2:No
+    text: 'Question 8: Do you have inadequate or poor sleep?'
+  utter_question8_no_no_yes:
+  - buttons:
+    - payload: /stress_medium
+      title: 1:Yes
+    - payload: /stress_low
+      title: 2:No
+    text: 'Question 8: Do you have inadequate or poor sleep?'
+  utter_question8_no_no_no:
+  - buttons:
+    - payload: /stress_low
+      title: 1:Yes
+    - payload: /stress_0
+      title: 2:No
+    text: 'Question 8: Do you have inadequate or poor sleep?'
+  utter_stress_low:
+  - buttons:
+    - payload: /stress_9q
+      title: 1:Yes
+    - payload: /stress_end
+      title: 2:No
+    text: |-
+      Your STRESS Range is Low(1), You can manage by doing 
+      -> excercise specially cardio or walk 
+      ->  Have a Cardamom Tea 
+      Do you want to Continue give the answers?
+  utter_stress_medium:
+  - buttons:
+    - payload: /stress_9q
+      title: 1:Yes
+    - payload: /stress_end
+      title: 2:No
+    text: |-
+      Your STRESS Range is Medium(2-3),You can manage by doing 
+      -> excercise specially cardio or walk
+      ->  Chamomile Herbal Tea
+      -> Have a bath which includes Lavender, Sandalwood & Ylang-Ylang Essential Oils. 
+      -> Meditation also helps alot.
+      Do you want to Continue give the answers?
+  utter_stress_high:
+  - buttons:
+    - payload: /stress_9q
+      title: 1:Yes
+    - payload: /stress_end
+      title: 2:No
+    text: |-
+      Your STRESS Range is High(4), 
+      You need to visit doctor on urgent basis. 
+      Here i am providing you a contact number for Counsellor Annuradha. She sits in VIMHANS Hospital.
+      Contact Number :- 9945670288 
+      Do you want to Continue give the answers ?
+  utter_stress_0:
+  - buttons:
+    - payload: /stress_9q
+      title: 1:Yes
+    - payload: /stress_end
+      title: 2:No
+    text: You does not fall in stress, continue to know more. Do you want to Continue give the answers ?
+  utter_question9:
+  - buttons:
+    - payload: /question10_yes
+      title: 1:Yes
+    - payload: /question10_no
+      title: 2:No
+    text: 'Question 9: Do you Fear of Pain'
+  utter_question10_yes:
+  - buttons:
+    - payload: /question11_yes_yes
+      title: 1:Yes
+    - payload: /question11_yes_no
+      title: 2:No
+    text: 'Question 10: Shortness of breath or difficulty in breathing '
+  utter_question10_no:
+  - buttons:
+    - payload: /question11_no_yes
+      title: 1:Yes
+    - payload: /question11_no_no
+      title: 2:No
+    text: 'Question 10: Shortness of breath or difficulty in breathing '
+  utter_question11_yes_yes:
+  - buttons:
+    - payload: /phobia_high
+      title: 1:Yes
+    - payload: /phobia_medium
+      title: 2:No
+    text: 'Question 11: A sensation of butterflies in the stomach '
+  utter_question11_yes_no:
+  - buttons:
+    - payload: /phobia_medium
+      title: 1:Yes
+    - payload: /phobia_low
+      title: 2:No
+    text: 'Question 11: A sensation of butterflies in the stomach'
+  utter_question11_no_yes:
+  - buttons:
+    - payload: /phobia_medium
+      title: 1:Yes
+    - payload: /phobia_low
+      title: 2:No
+    text: 'Question 11: A sensation of butterflies in the stomach '
+  utter_question11_no_no:
+  - buttons:
+    - payload: /phobia_low
+      title: 1:Yes
+    - payload: /phobia_0
+      title: 2:No
+    text: 'Question 11: A sensation of butterflies in the stomach'
+  utter_phobia_low:
+  - buttons:
+    - payload: /anxiety_12q
+      title: 1:Yes
+    - payload: /stress_end
+      title: 2:No
+    text: Your PHOBIA Range is Low(1), You can manage by Meditation & Dhyaan Mudra . Do you want to Continue give the answers
+  utter_phobia_medium:
+  - buttons:
+    - payload: /anxiety_12q
+      title: 1:Yes
+    - payload: /stress_end
+      title: 2:No
+    text: Your PHOBIA Range is Medium(2), You can manage by  Meditation, Dhyaan Mudra, Kapal Bhati & Pranayam. Counselling helps besst in this like CBT. Do you want to Continue give the answers
+  utter_phobia_high:
+  - buttons:
+    - payload: /anxiety_12q
+      title: 1:Yes
+    - payload: /stress_end
+      title: 2:No
+    text: |-
+      Your PHOBIA Range is High(4), 
+      You need to visit doctor on urgent basis. 
+      Here i am providing you a contact number for Counsellor Annuradha. She sits in VIMHANS Hospital.
+      Contact Number :- 9945670288 
+      Do you want to Continue give the answers ?
+  utter_phobia_0:
+  - buttons:
+    - payload: /anxiety_12q
+      title: 1:Yes
+    - payload: /stress_end
+      title: 2:No
+    text: You does not fall in phobia, continue to know more. Do you want to Continue give the answers ?
+  utter_question12:
+  - buttons:
+    - payload: /question13_yes
+      title: 1:Yes
+    - payload: /question13_no
+      title: 2:No
+    text: 'Question 12: Do you have feel like you are feeling irritated all the time or most of the time?'
+  utter_question13_yes:
+  - buttons:
+    - payload: /question14_yes_yes
+      title: 1:Yes
+    - payload: /question14_yes_no
+      title: 2:No
+    text: 'Question 13: Do you have Feeling on Edge or restless ?'
+  utter_question13_no:
+  - buttons:
+    - payload: /question14_no_yes
+      title: 1:Yes
+    - payload: /question14_no_no
+      title: 2:No
+    text: 'Question 13: Do you have Feeling on Edge or restless ?'
+  utter_question14_yes_yes:
+  - buttons:
+    - payload: /question15_yes_yes_yes
+      title: 1:Yes
+    - payload: /question15_yes_yes_no
+      title: 2:No
+    text: 'Question 14: Do you have Tightness in Neck ?'
+  utter_question14_yes_no:
+  - buttons:
+    - payload: /question15_yes_no_yes
+      title: 1:Yes
+    - payload: /question15_yes_no_no
+      title: 2:No
+    text: 'Question 14: Do you have Tightness in Neck ?'
+  utter_question14_no_yes:
+  - buttons:
+    - payload: /question15_no_yes_yes
+      title: 1:Yes
+    - payload: /question15_no_yes_no
+      title: 2:No
+    text: 'Question 14: Do you have Tightness in Neck ?'
+  utter_question14_no_no:
+  - buttons:
+    - payload: /question15_no_no_yes
+      title: 1:Yes
+    - payload: /question15_no_no_no
+      title: 2:No
+    text: 'Question 14: Do you have Tightness in Neck ?'
+  utter_question15_yes_yes_yes:
+  - buttons:
+    - payload: /anxiety_high
+      title: 1:Yes
+    - payload: /anxiety_medium
+      title: 2:No
+    text: 'Question 15: Do you feel like having Panic Attacks ?'
+  utter_question15_yes_yes_no:
+  - buttons:
+    - payload: /anxiety_medium
+      title: 1:Yes
+    - payload: /anxiety_medium
+      title: 2:No
+    text: 'Question 15: Do you feel like having Panic Attacks ?'
+  utter_question15_yes_no_yes:
+  - buttons:
+    - payload: /anxiety_medium
+      title: 1:Yes
+    - payload: /anxiety_medium
+      title: 2:No
+    text: 'Question 15: Do you feel like having Panic Attacks ?'
+  utter_question15_yes_no_no:
+  - buttons:
+    - payload: /anxiety_medium
+      title: 1:Yes
+    - payload: /anxiety_low
+      title: 2:No
+    text: 'Question 15: Do you feel like having Panic Attacks ?'
+  utter_question15_no_yes_yes:
+  - buttons:
+    - payload: /anxiety_medium
+      title: 1:Yes
+    - payload: /anxiety_medium
+      title: 2:No
+    text: 'Question 15: Do you feel like having Panic Attacks ?'
+  utter_question15_no_yes_no:
+  - buttons:
+    - payload: /anxiety_medium
+      title: 1:Yes
+    - payload: /anxiety_medium
+      title: 2:No
+    text: 'Question 15: Do you feel like having Panic Attacks ?'
+  utter_question15_no_no_yes:
+  - buttons:
+    - payload: /anxiety_medium
+      title: 1:Yes
+    - payload: /anxiety_low
+      title: 2:No
+    text: 'Question 15: Do you feel like having Panic Attacks ?'
+  utter_question15_no_no_no:
+  - buttons:
+    - payload: /anxiety_low
+      title: 1:Yes
+    - payload: /anxiety_0
+      title: 2:No
+    text: 'Question 15: Do you feel like having Panic Attacks ?'
+  utter_anxiety_low:
+  - text: Your Range is Low(1), You can manage by getting enough sleep, meditating, staying active and exercising, eating a healthy diet.
+  utter_anxiety_medium:
+  - text: |-
+      Your Range is Medium(2), You can manage by following method: 
+      Talk to someone, Learn what triggers your anxiety 
+      Maintain a positive attitude
+      Accept that you cannot control everything
+      Count to 10 slowly, Take deep breaths.
+  utter_anxiety_high:
+  - text: |-
+      Your DEPRESSION Range is High(4), 
+      You need to visit doctor on urgent basis. 
+      Here i am providing you a contact number for Counsellor Annuradha. She sits in VIMHANS Hospital.
+      Contact Number :- 9945670288 
+  utter_anxiety_0:
+  - text: 'You does not fall in Anxiety. '
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot and i am here to help you identify yours stress.
+  utter_stressno:
+  - text: Sorry no more information is available at the moment
+  utter_end:
+  - text: Thank You for your precious time.
+  utter_please_rephrase:
+  - text: I'm sorry, I didn't quite understand that. Could you rego
+actions:
+- action_hello_world
+forms: {}
+e2e_actions: []
